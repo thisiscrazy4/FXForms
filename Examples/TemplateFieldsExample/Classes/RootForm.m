@@ -30,14 +30,13 @@
 
 - (NSDictionary *)arrayWithTemplateField
 {
-    return @{FXFormFieldTemplate: @{FXFormFieldType: FXFormFieldTypeText}};
+    return @{FXFormFieldTemplate: @{FXFormFieldType: FXFormFieldTypeImage}};
 }
 
 - (NSDictionary *)sortableArrayWithTemplateField
 {
-    return @{FXFormFieldSortable: @YES, FXFormFieldTemplate: @{
-                     FXFormFieldType: FXFormFieldTypeDate}
-             };
+    return @{FXFormFieldSortable: @YES,
+             FXFormFieldTemplate: @{FXFormFieldType: FXFormFieldTypeImage}};
 }
 
 - (NSDictionary *)inlineArrayField
@@ -63,6 +62,17 @@
     return @{FXFormFieldInline: @YES, FXFormFieldSortable: @YES, FXFormFieldTemplate: @{
                      FXFormFieldType: FXFormFieldTypeLongText}
              };
+}
+
+- (NSDictionary *)otherEmailsField
+{
+  return @{
+           FXFormFieldInline: @YES,
+           FXFormFieldTemplate: @{
+               FXFormFieldType: FXFormFieldTypeEmail,
+               FXFormFieldTitle: @"Add another email",
+               }
+           };
 }
 
 @end
